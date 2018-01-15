@@ -1,0 +1,11 @@
+datastore:
+  host: 127.0.0.1
+  port: 14217
+  auth: True
+  user: admin
+  key: kItfui1b2p2M70MiJLF31K7sEwi26Xx39KbBolHhhZo=
+  pwd: gAAAAABaUHtYl7R7cfdC7jm5OAty1qvEU-Uldg5IVSYxD_WrC9lsUWyFAF6zMJ9OkBafUDnFEKUlipFuBh_xJ2ncXXy0UBZDXw==
+
+dataset:
+  path: /git/datum/
+  delimiters: {movieLens:['::','|'], uHousing:[csv,dates]}
