@@ -8,7 +8,7 @@ UK Housing Estimates - housingUK.py
 <br> <br>
 <b> START Movie Lens</b><br>
 $ python <br>
->>> from movieLens import * <br>
+from movieLens import * <br>
 <b> START UK Housing Analytics</b><br>
 $ python <br>
->>> from housingUK import *
+from housingUK import *
