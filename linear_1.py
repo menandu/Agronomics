@@ -31,3 +31,5 @@ print('Median of Y Training set: ',n.median(y_train_set))
 print()
 print('S-Dev of X Training set: ',n.std(x_train_set))
 print('S-Dev of Y Training set: ',n.std(y_train_set))
+
+# Linear Regression
