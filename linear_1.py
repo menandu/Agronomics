@@ -10,7 +10,7 @@ datastore=cfg['datastore']
 dataset=cfg['dataset']
 dpath=dataset['path']
 f_train=dpath+thisModule+'train.csv'
-f_tst=dpath+thisModule+'tst.csv'
+f_tst=dpath+thisModule+'test.csv'
 
 train_set=p.read_csv(f_train)
 tst_set=p.read_csv(f_tst)
