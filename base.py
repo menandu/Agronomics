@@ -10,5 +10,5 @@ datastore=cfg['datastore']
 dataset=cfg['dataset']
 dpath=dataset['path']
 
-datum=thisModule+'base.csv'
+datum=dpath+thisModule+'base.csv'
 dataset=p.read_csv(datum)
