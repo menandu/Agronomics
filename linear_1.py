@@ -26,9 +26,7 @@ y_tst_set=tst_set.as_matrix(['y'])
 print('Mean of X Training set: ',n.mean(x_train_set))
 print('Median of X Training set: ',n.median(x_train_set))
 print('S-Dev of X Training set: ',n.std(x_train_set))
-
 print()
-
 print('Mean of Y Training set: ',n.mean(y_train_set))
 print('Median of Y Training set: ',n.median(y_train_set))
 print('S-Dev of Y Training set: ',n.std(y_train_set))
