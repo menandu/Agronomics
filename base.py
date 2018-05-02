@@ -11,4 +11,5 @@ dataset=cfg['dataset']
 dpath=dataset['path']
 
 datum=dpath+thisModule+'base.csv'
-dataset=p.read_csv(datum)
+dataset=p.read_csv(datum,header=None)
+dataset.describe()
