@@ -1,0 +1,72 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  UIS
+  SAM Template for user-identity-service
+
+Globals:
+  Function:
+    Timeout: 6
+    MemorySize: 192
+
+Resources:
+  UserCollection:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: users
+      AttributeDefinitions:
+        - AttributeName: uid
+          AttributeType: S
+      KeySchema:
+        - AttributeName: uid
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 3
+        WriteCapacityUnits: 3
+
+  AuthUsers:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: handlers/
+      Handler: service.api_users
+      Runtime: python3.8
+      Policies:
+        DynamoDBCrudPolicy:
+          TableName:
+            !Ref UserCollection
+      Events:
+        PostUsers:
+          Type: Api
+          Properties:
+            Path: /auth/users
+            Method: post
+
+  AuthAbout:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: handlers/
+      Handler: service.api_infos
+      Runtime: python3.8
+      Events:
+        AboutSvc:
+          Type: Api
+          Properties:
+            Path: /auth/about
+            Method: get
+
+  AuthLogin:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: handlers/
+      Handler: service.api_login
+      Runtime: python3.8
+      Policies:
+        DynamoDBCrudPolicy:
+          TableName:
+            !Ref UserCollection
+      Events:
+        PostUsers:
+          Type: Api
+          Properties:
+            Path: /auth/login
+            Method: post

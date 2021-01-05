@@ -1,0 +1,7 @@
+bson
+boto3
+pyjwt
+mangum
+fastapi
+argon2-cffi
+cryptography
